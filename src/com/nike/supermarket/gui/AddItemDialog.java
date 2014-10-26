@@ -65,11 +65,11 @@ public class AddItemDialog {
 	            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 	        if (result == JOptionPane.OK_OPTION) {
 		        if(codeField.getText().isEmpty() || nameField.getText().isEmpty() || Double.valueOf(priceField.getText())<=0
-		        		|| Double.valueOf(numberOfItemsField.getText())<1 || Double.valueOf(numberOfItemsField.getText())<1 ){
+		        		|| Double.valueOf(numberOfItemsField.getText())<1 || Double.valueOf(forThePriceOfField.getText())<1 ){
 		        	JOptionPane.showMessageDialog(null, "One or more fields was invalid, please try again.", "ERROR", JOptionPane.ERROR_MESSAGE);
 		        }else{
 		        	Item i = new Item(codeField.getText().toUpperCase().charAt(0), nameField.getText(), descField.getText(), 
-		        			new Deal("",Double.valueOf(numberOfItemsField.getText()).intValue(),Double.valueOf(numberOfItemsField.getText()).intValue()),
+		        			new Deal("",Double.valueOf(numberOfItemsField.getText()).intValue(),Double.valueOf(forThePriceOfField.getText()).intValue()),
 		        			Double.valueOf(priceField.getText()).intValue());
 		        	dao.create(i);
 		        	Main.getSupermarketPanel().initializeButtons();
