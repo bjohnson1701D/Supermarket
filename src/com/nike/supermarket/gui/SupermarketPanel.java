@@ -100,7 +100,7 @@ public class SupermarketPanel extends JPanel {
 			String deal = item.getDeal().getName();
 			deal = deal == null ? "" : "<br>" + deal;
 			//Set tool tip as description and deal if available
-			addButton.setToolTipText("<html>"+item.getDescription()
+			addButton.setToolTipText("<html>"+item.getDescription()+"<br>Price: $"+item.getPrice()
 					+ deal+"</html>");
 			//Add item to cart when pressed, also update cartLabel.
 			addButton.addActionListener(new ActionListener() {
