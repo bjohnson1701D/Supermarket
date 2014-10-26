@@ -77,9 +77,12 @@ public class AddItemDialog {
 		        		|| Double.valueOf(numberOfItemsField.getText())<1 || Double.valueOf(forThePriceOfField.getText())<1 ){
 		        	JOptionPane.showMessageDialog(null, "One or more fields was invalid, please try again.", "ERROR", JOptionPane.ERROR_MESSAGE);
 		        }else{
+		        	Deal d = null;
+		        	if(numberOfItemsValue!=forThePriceOfValue)
+		        		d = new Deal(String.format("%s for the price of %s", numberOfItemsValue, forThePriceOfValue),
+		        				numberOfItemsValue, forThePriceOfValue);
 		        	Item i = new Item(codeField.getText().toUpperCase().charAt(0), nameField.getText(), descField.getText(), 
-		        			new Deal(String.format("%s for the price of %s", numberOfItemsValue, forThePriceOfValue), numberOfItemsValue ,forThePriceOfValue),
-		        			Double.valueOf(priceField.getText()).intValue());
+		        			d, Double.valueOf(priceField.getText()).intValue());
 		        	dao.create(i);
 		        	Main.getSupermarketPanel().initializeButtons();
 		        }

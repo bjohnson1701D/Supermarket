@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import com.nike.supermarket.Main;
 import com.nike.supermarket.dao.ItemDao;
 import com.nike.supermarket.entites.Cart;
+import com.nike.supermarket.entites.Deal;
 import com.nike.supermarket.entites.Item;
 import com.nike.supermarket.service.Supermarket;
 
@@ -97,11 +98,11 @@ public class SupermarketPanel extends JPanel {
 		
 		for(final Item item : allItems){
 			JButton addButton = new JButton(item.getName());
-			String deal = item.getDeal().getName();
-			deal = deal == null ? "" : "<br>" + deal;
+			Deal deal = item.getDeal();
+			String dealName = deal == null ? "" : "<br>" + deal.getName();
 			//Set tool tip as description and deal if available
 			addButton.setToolTipText("<html>"+item.getDescription()+"<br>Price: $"+item.getPrice()
-					+ deal+"</html>");
+					+ dealName+"</html>");
 			//Add item to cart when pressed, also update cartLabel.
 			addButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
