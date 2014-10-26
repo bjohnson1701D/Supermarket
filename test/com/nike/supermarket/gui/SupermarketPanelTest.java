@@ -10,7 +10,6 @@ import com.nike.supermarket.Main;
 import com.nike.supermarket.dao.ItemDao;
 import com.nike.supermarket.dao.ItemDaoMapImpl;
 import com.nike.supermarket.entites.Cart;
-import com.nike.supermarket.entites.Item;
 import com.nike.supermarket.service.NikeSupermarket;
 
 public class SupermarketPanelTest {

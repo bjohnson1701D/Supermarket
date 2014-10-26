@@ -19,6 +19,10 @@ import com.nike.supermarket.dao.ItemDao;
 import com.nike.supermarket.entites.Deal;
 import com.nike.supermarket.entites.Item;
 
+/**
+ * Shows pop-up Dialog for creating or updating items.
+ * @author Brad Johnson
+ */
 public class AddItemDialog {
 	
 	private ItemDao dao;
@@ -27,6 +31,9 @@ public class AddItemDialog {
 		this.dao = itemDao;
 	}
 	
+	/**
+	 * Displays the Dialog Box, with fields for inputting item data.
+	 */
 	public void showDialog(){
 		NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.getDefault());
 		DecimalFormat decimalFormat = (DecimalFormat) numberFormat;
@@ -79,7 +86,10 @@ public class AddItemDialog {
 	        }
 	}
 	
-	private  class CharacterField extends PlainDocument {
+	/**
+	 * Extends PlainDocument and ensures that the inserted string is never greater than 1 character long.
+	 */
+	private class CharacterField extends PlainDocument {
 		private static final long serialVersionUID = 1L;
 
 		@Override

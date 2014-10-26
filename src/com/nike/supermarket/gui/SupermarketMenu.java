@@ -9,6 +9,10 @@ import javax.swing.JMenuItem;
 
 import com.nike.supermarket.Main;
 
+/**
+ * Sets up the Menu Bar to be displayed within the main frame of the applicaiton.
+ * @author Brad Johnson
+ */
 public class SupermarketMenu {
 
 	public static JMenuBar getMenu(){
